@@ -58,3 +58,17 @@ Este endpoint dados completos de um único usuário, identificado pelo seu ID.
 #### Resposta de Erro (`400 OK`)
 
 Ocorre erro caso o user_id não exista no banco de dados da aplicação.
+
+
+---
+
+### Executando o teste via Postman
+
+- Persistindo os dados no sistema de processamento.
+![image](https://github.com/user-attachments/assets/d3552e57-5f9b-4410-b09b-634d5beee9e2)
+
+
+- Buscando os usuários, listando os produtos e histórico de compra.
+
+![image](https://github.com/user-attachments/assets/df577644-f73b-4509-921f-566b6da33dc9)
+
