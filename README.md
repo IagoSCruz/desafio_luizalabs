@@ -6,6 +6,47 @@ Este projeto consiste em uma API desenvolvida para processar, validar e armazena
 
 ---
 
+## Tecnologias e Conceitos Aplicados
+
+-   **Backend:** Python 3.10, Django 5.2, Django REST Framework
+-   **Banco de Dados:** SQLite (padrão do Django para desenvolvimento)
+-   **Containerização:** Docker & Docker Compose
+-   **Arquitetura:** API RESTful
+-   **Versionamento:** Git
+
+---
+
+## Como Executar o Projeto
+
+**Pré-requisitos:**
+* [Git](https://git-scm.com/)
+* [Docker](https://www.docker.com/products/docker-desktop/)
+* [Docker Compose](https://docs.docker.com/compose/install/)
+
+**Passos para Execução:**
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/desktop/desktop/issues/18661](https://github.com/desktop/desktop/issues/18661)
+    cd [nome-da-pasta-do-projeto]
+    ```
+
+2.  **Construa e inicie os contêineres:**
+    O Docker Compose cuidará de tudo: construir a imagem, instalar as dependências e aplicar as migrações do banco de dados.
+    ```bash
+    docker-compose up --build
+    ```
+    *A aplicação estará rodando e acessível em `http://localhost:8000`.*
+
+3.  **(Não obrigatório) Crie um superusuário para acessar o Admin:**
+    Abra um novo terminal e execute:
+    ```bash
+    docker-compose exec web python manage.py createsuperuser
+    ```
+    *A interface admin do Django ficará disponível em `http://localhost:8000/admin/`.*
+
+---
+
 ## Endpoints da API
 
 ### 1. Processar e Salvar Arquivo de Dados
@@ -16,7 +57,7 @@ Este endpoint é usado para enviar um arquivo de texto. O sistema irá processar
 -   **Método:** `POST`
 -   **Descrição:** Recebe um arquivo `.txt` formatado, processa cada linha e salva as informações de usuários, pedidos e produtos no banco. A operação é idempotente: dados existentes (baseados em `user_id` e `order_id`) serão atualizados; novos dados serão criados.
 
-#### Corpo da Requisição (Request Body)
+#### Corpo da Requisição (Payload)
 
 A requisição deve ser do tipo `multipart/form-data`.
 
