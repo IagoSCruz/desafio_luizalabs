@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    # Adicionamos 'working_dir' para garantir que os comandos sempre rodem no contexto certo.
+    working_dir: /app
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      # Manter esta linha é uma boa prática.
+      - DJANGO_SETTINGS_MODULE=app.settings

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-hdb1(@f(p+!_f&t(1wf&&-&pdua9)%m*_+b)q%yg3+a#pdok$o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
 
 
 # Application definition
